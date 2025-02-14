@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Día - Criminología</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            position: relative;
+            overflow: hidden;
+        }
+        .mensaje {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            position: relative;
+            z-index: 2;
+        }
+        .cinta {
+            position: absolute;
+            width: 100%;
+            top: 50%;
+            transform: translateY(-50%) rotate(-5deg);
+            background: yellow;
+            color: black;
+            text-align: center;
+            padding: 10px;
+            font-size: 20px;
+            font-weight: bold;
+            border: 3px solid black;
+            z-index: 1;
+            animation: moverCinta 2s infinite alternate;
+        }
+        @keyframes moverCinta {
+            0% { transform: translateY(-50%) rotate(-5deg); }
+            100% { transform: translateY(-48%) rotate(-5deg); }
+        }
+        .luces {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+        }
+        .luz {
+            position: absolute;
+            width: 100vw;
+            height: 100vh;
+            background: red;
+            opacity: 0;
+            animation: luces 1s infinite alternate;
+        }
+        .luz.azul {
+            background: blue;
+            animation-delay: 0.5s;
+        }
+        @keyframes luces {
+            0% { opacity: 0.1; }
+            100% { opacity: 0.3; }
+        }
+    </style>
+</head>
+<body>
+    <div class="luces">
+        <div class="luz roja"></div>
+        <div class="luz azul"></div>
+    </div>
+    <div class="cinta">⚠️ NO CRUZAR - ESCENA DEL CRIMEN ⚠️</div>
+    <div class="mensaje">
+        <p>Feliz Día del Amor y la Amistad</p>
+        <p>Nunca dejes de seguir tu sueño de ser criminóloga.</p>
+        <p>¡El mundo necesita mentes brillantes como la tuya!</p>
+    </div>
+</body>
+</html>
